@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "6b6bd23c-a2f7-4734-85b7-04ccd6f63602",
+		"name": "Book Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22851008"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"First Book\",\r\n    \"bookAuthor\":\"Saurabh Srivastav\",\r\n    \"summary\":\"hey there jejjeo\",\r\n    \"publisher\":\"publisher1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9020/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books (Paginated)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9020/api/v1/books?limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9020/api/v1/books/653e6674087711f608cba1b1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"653e6674087711f608cba1b1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book Data",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"My First Book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9020/api/v1/books/653e6674087711f608cba1b1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"653e6674087711f608cba1b1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9020/api/v1/books/653e6674087711f608cba1b1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9020",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"653e6674087711f608cba1b1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
