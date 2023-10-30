@@ -5,9 +5,8 @@ exports.createNewBook = async(req,res,next) => {
     try{
         const {title} = req.body
         //case insensitive search
-        const isBookAlreadyExist = await bookModel.findOne({
-            title:/`${title}`/i
-        })
+        const isBookAlreadyExist = await bookModel.findOne({title}).collation({strength:2,locale:'en'})
+       
         if(isBookAlreadyExist){
             return errorHandler(res,400,{message:"Book with this name already exist"})
         }
